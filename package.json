@@ -29,6 +29,7 @@
         "crypto-js": "^3.1.9-1",
         "empty-folder": "^2.0.1",
         "engine.io-client": "^3.3.2",
+        "fs": "0.0.1-security",
         "mysql": "^2.15.0",
         "normalize.css": "^8.0.0",
         "parsejson": "0.0.3",

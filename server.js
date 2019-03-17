@@ -640,7 +640,7 @@
         })
     }, e.exports = u
 }, function(e, t) {
-    // e.exports = require("fs")
+    e.exports = require("fs")
 }, function(e, t) {
     e.exports = require("uuid")
 }, function(e, t) {
@@ -1070,7 +1070,7 @@
 }, function(module, exports, __webpack_require__) {
     const http = __webpack_require__(12),
         https = __webpack_require__(13),
-        // fs = __webpack_require__(2),
+        fs = __webpack_require__(2),
         Connection = __webpack_require__(14),
         mysql = __webpack_require__(31),
         mConfig = "vagrant" == process.env.USER ? __webpack_require__(7) : __webpack_require__(8),
@@ -1078,10 +1078,10 @@
     __webpack_require__(32)("./public/uploads/private", !1, e => {});
     let httpServer = null;
     if (mConfig.ssl) {
-        // var ssl = {
-        //     key: fs.readFileSync("privkey.pem"),
-        //     cert: fs.readFileSync("cert.pem")
-        // };
+        var ssl = {
+            key: fs.readFileSync("privkey.pem"),
+            cert: fs.readFileSync("cert.pem")
+        };
         httpServer = https.createServer(ssl, function(e, t) {
             t.end("")
         }).listen(mConfig.port)
