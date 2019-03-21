@@ -29,7 +29,7 @@ class AuthController extends Controller {
         $username = $request->input('name');
         $ip = $request->input("ip");
         $device = $request->input("device");
-
+        
         $user = User::where("name", $username)->first();
         $banned = Banned::where("ip", $ip)->orWhere("device", $device)->first();
 
@@ -54,7 +54,7 @@ class AuthController extends Controller {
             if (!$this->isCountryAllowed($country, $this->arabeCountries, $this->settings->bolcked_countries, !!$this->settings->disable_foreing_contries)) {
                 return response(["error" => true, "is_friendly_message" => true, "message" => "لقد تم حظرك"], 400);
             }
-
+            
             return response(["error" => false, "message" => null], 200);
 
         }

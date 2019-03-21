@@ -674,12 +674,12 @@
     }
 }, function(e, t) {
     e.exports = {
-        host: "https://jawalchat.com/",
+        host: "http://jawalchat.com/",
         domain: "jawalchat.com", 
         port: 1505,
         adminHash: "kbtRA5P0oFeBNwJIOsDeLnkO2XwsUb0H",
         debug: !0,
-        ssl: !0,
+        ssl: !1,
         local: !1,
         aes_secret: "0~P0{436,09w39Q",
         db: {
@@ -1220,6 +1220,7 @@
             country: this.user.country,
             adminHash: this.store.config.adminHash
         };
+		
         r.post(this.store.config.host + "auth/guest-login", s).then(t => {
             this.handleMutliSessions(), this.user.init(e), this.user.room = this.store.rooms.getDefault(this.user, this.store.users), this.store.rooms.get(this.user.room.id).users.push(this.user.id), this.store.users.push(this.user);
             const s = Date.now() + Math.round(1e8 * Math.random());
